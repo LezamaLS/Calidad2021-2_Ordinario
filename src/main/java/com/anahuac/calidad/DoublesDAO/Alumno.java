@@ -1,3 +1,8 @@
+//Entrega Final Miguel Lezama
+//Calidad y Pruebas de Software
+
+//Alumno.java
+
 package com.anahuac.calidad.DoublesDAO;
 
 public class Alumno {

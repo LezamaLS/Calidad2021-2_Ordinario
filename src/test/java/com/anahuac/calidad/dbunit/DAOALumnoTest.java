@@ -1,3 +1,8 @@
+//Entrega Final Miguel Lezama
+//Calidad y Pruebas de Software
+
+//TEST Integracion con MySQL
+
 package com.anahuac.calidad.dbunit;
 
 import static org.junit.Assert.*;
