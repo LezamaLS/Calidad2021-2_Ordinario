@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataset>
-	<alumnos_tbl id="003" nombre="alumno003" email="prueba3@gmail.com" edad="23" />
+	<Alumnia id="003" nombre="alumno003" email="prueba3@gmail.com" edad="23" />
 </dataset>

@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS DBUnit;
-USE DBUnit;
+CREATE DATABASE IF NOT EXISTS pruebas_db;
+USE pruebas_db;
 CREATE TABLE IF NOT EXISTS Alumnia(
     id INT(11),
     nombre VARCHAR(50),

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataset>
-	<alumnos_tbl id="001" nombre="alumno001" email="prueba1@gmail.com" edad="21" />
-	<alumnos_tbl id="002" nombre="alumno002" email="prueba2@gmail.com" edad="22" />
+	<Alumnia id="001" nombre="alumno001" email="prueba1@gmail.com" edad="21" />
+	<Alumnia id="002" nombre="alumno002" email="prueba2@gmail.com" edad="22" />
 </dataset>

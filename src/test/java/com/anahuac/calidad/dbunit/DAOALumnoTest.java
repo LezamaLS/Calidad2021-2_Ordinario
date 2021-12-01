@@ -87,11 +87,11 @@ public class DAOALumnoTest extends DBTestCase{
 			// This is the full database
 			IDataSet databaseDataSet = getConnection().createDataSet(); 
 			
-			ITable actualTable = databaseDataSet.getTable("alumnos_tbl");
+			ITable actualTable = databaseDataSet.getTable("Alumnia");
 			
 			// Read XML with the expected result
 			IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/resources/insert_result.xml"));
-			ITable expectedTable = expectedDataSet.getTable("alumnos_tbl");
+			ITable expectedTable = expectedDataSet.getTable("Alumnia");
 			
 			Assertion.assertEquals(expectedTable, actualTable);
 			
@@ -118,11 +118,11 @@ public class DAOALumnoTest extends DBTestCase{
 			// This is the full database
 			IDataSet databaseDataSet = getConnection().createDataSet(); 
 			
-			ITable actualTable = databaseDataSet.getTable("alumnos_tbl");
+			ITable actualTable = databaseDataSet.getTable("Alumnia");
 			
 			// Read XML with the expected result
 			IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/resources/delete_result.xml"));
-			ITable expectedTable = expectedDataSet.getTable("alumnos_tbl");
+			ITable expectedTable = expectedDataSet.getTable("Alumnia");
 			
 			Assertion.assertEquals(expectedTable, actualTable);
 			
@@ -152,11 +152,11 @@ public class DAOALumnoTest extends DBTestCase{
 			// This is the full database
 			IDataSet databaseDataSet = getConnection().createDataSet(); 
 			
-			ITable actualTable = databaseDataSet.getTable("alumnos_tbl");
+			ITable actualTable = databaseDataSet.getTable("Alumnia");
 			
 			// Read XML with the expected result
 			IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/resources/update_result.xml"));
-			ITable expectedTable = expectedDataSet.getTable("alumnos_tbl");
+			ITable expectedTable = expectedDataSet.getTable("Alumnia");
 			
 			Assertion.assertEquals(expectedTable, actualTable);
 			
@@ -176,7 +176,7 @@ public class DAOALumnoTest extends DBTestCase{
 	public void testSearchAlumno() {
 		// call search method
 		Alumno retrivied = daoMySql.searchAlumno("003");
-		String query = "SELECT * FROM alumnos_tbl WHERE id = \"003\""; 
+		String query = "SELECT * FROM Alumnia WHERE id = \"003\""; 
 		// Verify data in database
 		try {
 			// This is the full database
@@ -184,15 +184,15 @@ public class DAOALumnoTest extends DBTestCase{
 			
 			// Generate a temporal table with the select query only 
 			QueryDataSet actualTable = new QueryDataSet(getConnection());
-			actualTable.addTable("alumnosTemp_tbl", query);
+			actualTable.addTable("TempAlumnia", query);
 			
 			// Read XML with the expected result
 			IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/resources/select_result.xml"));
-			ITable expectedTable = expectedDataSet.getTable("alumnos_tbl");
+			ITable expectedTable = expectedDataSet.getTable("Alumnia");
 			
 			// Verify 
-			//System.out.print(actualTable.getTable("alumnosTemp_tbl").getValue(0, "nombre")); 
-			Assertion.assertEquals(expectedTable, actualTable.getTable("alumnosTemp_tbl"));
+			//System.out.print(actualTable.getTable("TempAlumnia").getValue(0, "nombre")); 
+			Assertion.assertEquals(expectedTable, actualTable.getTable("TempAlumnia"));
 			
 			
 		} catch (Exception e) {

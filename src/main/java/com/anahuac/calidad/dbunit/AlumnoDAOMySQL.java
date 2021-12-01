@@ -44,7 +44,7 @@ public class AlumnoDAOMySQL {
 			// Declare statement query to run
 			PreparedStatement preparedStatement;
 			preparedStatement = connection
-					.prepareStatement("insert INTO alumnos_tbl(id,nombre,email,edad) values(?,?,?,?)");
+					.prepareStatement("insert INTO Alumnia(id,nombre,email,edad) values(?,?,?,?)");
 			// Set the values to match in the ? on query
 			preparedStatement.setString(1, a.getId());
 			preparedStatement.setString(2, a.getNombre());
@@ -82,7 +82,7 @@ public class AlumnoDAOMySQL {
 		try {
 			// Declare statement query to run
 			PreparedStatement preparedStatement;
-			preparedStatement = connection.prepareStatement("Delete from alumnos_tbl WHERE id = ?");
+			preparedStatement = connection.prepareStatement("Delete from Alumnia WHERE id = ?");
 			// Set the values to match in the ? on query
 			preparedStatement.setString(1, a.getId());
 
@@ -117,7 +117,7 @@ public class AlumnoDAOMySQL {
 		try {
 			// Declare statement query to run
 			PreparedStatement preparedStatement;
-			preparedStatement = connection.prepareStatement("UPDATE alumnos_tbl SET email = ? WHERE id = ?");
+			preparedStatement = connection.prepareStatement("UPDATE Alumnia SET email = ? WHERE id = ?");
 			// Set the values to match in the ? on query
 			preparedStatement.setString(1, a.getEmail());
 			preparedStatement.setString(2, a.getId());
@@ -156,7 +156,7 @@ public class AlumnoDAOMySQL {
 
 		try {
 			// Declare statement query to run
-			preparedStatement = connection.prepareStatement("SELECT * from alumnos_tbl WHERE id = ?");
+			preparedStatement = connection.prepareStatement("SELECT * from Alumnia WHERE id = ?");
 			// Set the values to match in the ? on query
 			preparedStatement.setString(1, id);
 			rs = preparedStatement.executeQuery();
