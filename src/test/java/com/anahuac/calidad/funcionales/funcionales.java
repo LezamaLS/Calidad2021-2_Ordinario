@@ -3,7 +3,7 @@
 
 //TEST Funcional con SELENIUM
 
-package com.anahuac.calidad.funcionales.mern;
+package com.anahuac.calidad.funcionales;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
