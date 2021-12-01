@@ -28,14 +28,14 @@ import org.junit.FixMethodOrder;
 import org.junit.runners.MethodSorters;
 
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+//@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class funcionales {
 	private WebDriver driver;
 	private String url;
 	JavascriptExecutor js;
 	
 	//Bofore, After
-	@SuppressWarnings("deprecation")
+	//@SuppressWarnings("deprecation")
 	@Before
 	public void setUp() throws Exception {
 		WebDriverManager.chromedriver().setup();
