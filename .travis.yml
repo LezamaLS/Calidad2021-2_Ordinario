@@ -28,8 +28,6 @@ before_install:
 script: 
 - mvn clean
 - mvn test
-- mvn surefire:test -Dtest=DAOAlumnoTest
-- mvn surefire:test -Dtest=FakeOracleAlumnoDAOTest
 - mvn surefire:test -Dtest=funcionales
 
 - DfailIfNoTests=false
