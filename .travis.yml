@@ -1,8 +1,13 @@
 sudo: enabled
 language: java
+jdk: oraclejdk13
+
 services:
   - mysql
   - xvfb
+
+
+
 before_install:
   - sudo apt-get update
   - sudo apt-get install dbus-x11
@@ -18,3 +23,13 @@ before_install:
 
 
   - mysql -u root --password="" < SQLTest/dummy.sql
+
+
+script: 
+- mvn clean
+- mvn test
+- mvn surefire:test -Dtest=DAOAlumnoTest
+- mvn surefire:test -Dtest=FakeOracleAlumnoDAOTest
+- mvn surefire:test -Dtest=funcionales
+
+
