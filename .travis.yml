@@ -19,6 +19,5 @@ before_install:
   - unzip chromedriver_linux64.zip
   - sudo cp chromedriver /usr/bin
 
-  - sudo cp dummy.sql /usr/bin
+  - sudo cp SQLTest/dummy.sql /usr/bin
   - mysql < /usr/bin/dummy.sql
-  
