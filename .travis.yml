@@ -32,4 +32,4 @@ script:
 - mvn surefire:test -Dtest=FakeOracleAlumnoDAOTest
 - mvn surefire:test -Dtest=funcionales
 
-
+- DfailIfNoTests=false
