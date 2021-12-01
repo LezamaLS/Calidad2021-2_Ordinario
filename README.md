@@ -1,4 +1,4 @@
-# CalidadYPruebas
+# Entrega Ordinario Lezama
 
 
-Este es el git de prueba con todos los entregables para la clase de calidad y pruebas de software
+Este repo pertenece a la entrega final de Calidad y Pruebas de Software con Integracion Continua.
