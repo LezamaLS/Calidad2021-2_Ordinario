@@ -20,4 +20,4 @@ before_install:
   - sudo cp chromedriver /usr/bin
 
   - sudo cp SQLTest/dummy.sql /usr/bin
-  - mysql < /usr/bin/dummy.sql
+  - mysql -u root --password="" < /usr/bin/dummy.sql
