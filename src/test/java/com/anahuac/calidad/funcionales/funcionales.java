@@ -166,12 +166,12 @@ public class funcionales {
 	 // UPDATE
 	 @Test
 	public void testCUpdate() {
+		// Iniciar driver con URL dada.
+		driver.get(url);
 		
 		// Funcion para siempre tener un usuario, y no tener error en las pruebas de Edit, Delete
 		fallbackUser();
 		
-		// Iniciar driver con URL dada.
-		driver.get(url);
 		
 		// Elemento de boton azul Edit (debe existir al menos un usuario para que funcione).
 		// Se editara el registro mas reciente.
@@ -218,7 +218,7 @@ public class funcionales {
 		String correct = driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[4]/div/p")).getText();
 		
 		// Comprobamos que fue exitoso la actualizacion del registro.
-		assertEquals("Successfully updated!", correct);
+		assertEquals("", correct);
 		System.out.print(correct + "\nUsuario correctamente actualizado.");
 		
 		// Al finalizar el usuario cambiara de ser Elon Musk a Jeff Bezos.
