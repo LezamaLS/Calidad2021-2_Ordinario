@@ -109,7 +109,7 @@ public class funcionales {
 	 
 	 // DELETE
 	 @Test
-	 public void testMDelete() {
+	 public void testDDelete() {
 		
 		// Funcion para siempre tener un usuario, y no tener error en las pruebas de Edit, Delete
 		fallbackUser();
@@ -165,7 +165,7 @@ public class funcionales {
 	 
 	 // UPDATE
 	 @Test
-	public void testCUpdate() {
+	public void testBUpdate() {
 		// Iniciar driver con URL dada.
 		driver.get(url);
 		
@@ -231,7 +231,7 @@ public class funcionales {
 	 
 	// RETRIEVE
 	 @Test
-	 public void testGRetrieve() throws Exception {
+	 public void testCRetrieve() throws Exception {
 		 // Include a Student for the search
 		 fallbackUser();
 		 // Expected values
