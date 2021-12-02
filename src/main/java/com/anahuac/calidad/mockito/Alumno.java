@@ -3,7 +3,7 @@
 
 //Alumno.java
 
-package com.anahuac.calidad.DoublesDAO;
+package com.anahuac.calidad.mockito;
 
 public class Alumno {
 	// Attributes

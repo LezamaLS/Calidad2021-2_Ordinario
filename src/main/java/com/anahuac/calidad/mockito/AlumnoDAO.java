@@ -3,7 +3,7 @@
 
 //AlumnoDAO.java
 
-package com.anahuac.calidad.DoublesDAO;
+package com.anahuac.calidad.mockito;
 
 public interface AlumnoDAO {
 	public Boolean addAlumno(Alumno a); 

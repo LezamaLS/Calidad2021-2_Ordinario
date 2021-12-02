@@ -26,18 +26,18 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.anahuac.calidad.DoublesDAO.Alumno;
-import com.anahuac.calidad.dbunit.AlumnoDAOMySQL;
+import com.anahuac.calidad.dbunit.DBUnit;
+import com.anahuac.calidad.mockito.Alumno;
 
-public class DAOALumnoTest extends DBTestCase{
+public class DBUnitTest extends DBTestCase{
 	
 	String nuevoCorreo = "update3@gmail.com"; 
 	
 	
 	// Declare DAO
-	private AlumnoDAOMySQL daoMySql; 
+	private DBUnit daoMySql; 
 	
-	public DAOALumnoTest() {
+	public DBUnitTest() {
 		System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_DRIVER_CLASS,"com.mysql.cj.jdbc.Driver");
 		System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_CONNECTION_URL,"jdbc:mysql://127.0.0.1:3306/pruebas_db");
 		System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_USERNAME,"root");
@@ -53,7 +53,7 @@ public class DAOALumnoTest extends DBTestCase{
 	@Before
 	public void setUp() throws Exception {
 		// Initialize DAO
-		daoMySql = new AlumnoDAOMySQL(); 
+		daoMySql = new DBUnit(); 
 		// Set the initial condition of the database
 		IDatabaseConnection connection = getConnection(); 
 		try {
