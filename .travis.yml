@@ -37,9 +37,8 @@ script:
 - mvn surefire:test -Dtest=MockitoTest
 - mvn surefire:test -Dtest=DBUnitTest
 
-#- DfailIfNoTests=false #Util para continuar haciendo pruebas aunque no se encuentre un Test
+- DfailIfNoTests=false #Util para continuar haciendo pruebas aunque no se encuentre un Test. No es necesario para el build final, pero cabe destacarlo.
 
 
 notifications:
  email: false #A este punto ya tenia 20 correos basura sobre travis
- 
