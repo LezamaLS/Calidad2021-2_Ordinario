@@ -30,11 +30,9 @@ import com.anahuac.calidad.dbunit.DBUnit;
 import com.anahuac.calidad.mockito.Alumno;
 
 public class DBUnitTest extends DBTestCase{
-	
 	String nuevoCorreo = "update3@gmail.com"; 
 	
-	
-	// Declare DAO
+
 	private DBUnit daoMySql; 
 	
 	public DBUnitTest() {
@@ -46,15 +44,13 @@ public class DBUnitTest extends DBTestCase{
 
 	@Override
 	protected IDataSet getDataSet() throws Exception {
-		// TODO Auto-generated method stub
 		return new FlatXmlDataSetBuilder().build(new File("src/resources/iniDB.xml"));
 	}
 	
 	@Before
 	public void setUp() throws Exception {
-		// Initialize DAO
 		daoMySql = new DBUnit(); 
-		// Set the initial condition of the database
+
 		IDatabaseConnection connection = getConnection(); 
 		try {
 			DatabaseOperation.CLEAN_INSERT.execute(connection, getDataSet());
@@ -82,14 +78,11 @@ public class DBUnitTest extends DBTestCase{
 		
 		daoMySql.addAlumno(alumno);
 		
-		// Verify data in database
 		try {
-			// This is the full database
 			IDataSet databaseDataSet = getConnection().createDataSet(); 
 			
 			ITable actualTable = databaseDataSet.getTable("Alumnia");
 			
-			// Read XML with the expected result
 			IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/resources/insert_result.xml"));
 			ITable expectedTable = expectedDataSet.getTable("Alumnia");
 			
@@ -97,7 +90,6 @@ public class DBUnitTest extends DBTestCase{
 			
 			
 		} catch (Exception e) {
-			// TODO: handle exception
 			fail("Error in insert test: " + e.getMessage());
 		}	
 	}
@@ -113,14 +105,11 @@ public class DBUnitTest extends DBTestCase{
 		
 		daoMySql.deleteAlumno(alumno);
 		
-		// Verify data in database
 		try {
-			// This is the full database
 			IDataSet databaseDataSet = getConnection().createDataSet(); 
 			
 			ITable actualTable = databaseDataSet.getTable("Alumnia");
 			
-			// Read XML with the expected result
 			IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/resources/delete_result.xml"));
 			ITable expectedTable = expectedDataSet.getTable("Alumnia");
 			

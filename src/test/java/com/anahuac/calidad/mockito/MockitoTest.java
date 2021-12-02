@@ -6,42 +6,35 @@
 package com.anahuac.calidad.mockito;
 
 import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-// Import HasMap
 import java.util.HashMap;
-//Import mockito
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-
 import com.anahuac.calidad.mockito.Alumno;
 import com.anahuac.calidad.mockito.MockitoMain;
-
 import static org.mockito.Mockito.when;
 import static org.mockito.ArgumentMatchers.*;
-//Import hamcrest
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
 public class MockitoTest {
-	
 	private MockitoMain DAO;
-	// Initialize HashMap
+
 	public HashMap <String, Alumno> alumnos; 
-	// Create student
 	Alumno alumno1; 
-	// Act email
+
 	String nuevoCorreo = "CorreoActualizado@gmail.com";
+
 
 	@Before
 	public void setUp() throws Exception {
 		DAO = Mockito.mock(MockitoMain.class);
+
 		alumnos = new HashMap <String, Alumno>();
-		// Declare the object with parameters
 		alumno1 = new Alumno("001","nombre", "CorreoActual@gmail.com", 20); 
 		
 	}
@@ -54,11 +47,9 @@ public class MockitoTest {
 	// CREATE
 	@Test
 	public void addAlumno_test() {
-		
-		// Set the value of students before adding a new one
-		int ammountbefore = alumnos.size(); 
+		int previous = alumnos.size(); 
 		System.out.println("Add Alumno Mock"); 
-		System.out.println("Size before=" + ammountbefore); 
+		System.out.println("Size before=" + previous); 
 		
 		// Set behaviors 
 		when(DAO.addAlumno(any(Alumno.class))).thenAnswer(new Answer<Boolean>() {
@@ -75,8 +66,8 @@ public class MockitoTest {
 		);
 		// Call the method and add one student
 		DAO.addAlumno(alumno1);
-		int ammountDesp = alumnos.size(); 
-		assertThat(ammountbefore+1,is(ammountDesp)); 	
+		int after = alumnos.size(); 
+		assertThat(previous+1,is(after)); 	
 	}
 	
 	
@@ -87,9 +78,9 @@ public class MockitoTest {
 		// Put the student in the hashmap
 		alumnos.put("001", alumno1); 
 		// Set the value of students before deleting an student
-		int ammountbefore = alumnos.size(); 
+		int previous = alumnos.size(); 
 		System.out.println("Delete Alumno Mock"); 
-		System.out.println("Size before=" + ammountbefore); 
+		System.out.println("Size before=" + previous); 
 		
 		// Set behaviors 
 		when(DAO.deleteAlumno(any(Alumno.class))).thenAnswer(new Answer<Boolean>() {
@@ -106,8 +97,8 @@ public class MockitoTest {
 		);
 		// Call the method and add one student
 		DAO.deleteAlumno(alumno1);
-		int ammountDesp = alumnos.size(); 
-		assertThat(ammountbefore-1,is(ammountDesp)); 
+		int after = alumnos.size(); 
+		assertThat(previous-1,is(after)); 
 	}
 	
 	
