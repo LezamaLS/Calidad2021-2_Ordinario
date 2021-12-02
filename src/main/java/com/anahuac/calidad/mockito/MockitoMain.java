@@ -1,7 +1,7 @@
 //Entrega Final Miguel Lezama
 //Calidad y Pruebas de Software
 
-//FakeOracleAlumno.java
+//MockitoMain
 
 package com.anahuac.calidad.mockito;
 
