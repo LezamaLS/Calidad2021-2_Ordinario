@@ -31,3 +31,8 @@ script:
 - mvn surefire:test -Dtest=funcionales #Por medio de surefire, aseguramos que se pruebe el test de funcionales
 
 - DfailIfNoTests=false #Util para continuar haciendo pruebas aunque no se encuentre un Test
+
+
+notifications:
+ email: false #A este punto ya tenia 20 correos basura sobre travis
+ 
