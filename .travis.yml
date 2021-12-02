@@ -1,11 +1,17 @@
-sudo: enabled
+#Travis File para Calidad y Pruiebas de Software
+#Miguel Lezama Orozco
+#00355675
+
+
+#Core Settings para comunicar a Travis lo basico
+sudo: required
 language: java
 jdk: oraclejdk13
+
 
 services:
 - xvfb #Display Virtual
 - mysql #Base de datos
-
 
 
 before_install:
@@ -21,20 +27,15 @@ before_install:
   - unzip chromedriver_linux64.zip #Descomprimimos ChromeDriver
   - sudo cp chromedriver /usr/bin #Acomodamos ChromeDriver en el bin
 
-
   - mysql -u root --password="" < SQLTest/dummy.sql #Proceso para MySQL, usando mi dummy script
 
 
 script: 
 - mvn clean #Aseguramos que surefire pueda correr sin problemas
-- mvn test #Iniciamos proceso de pruebas de Maven
+#- mvn test #Iniciamos proceso de pruebas de Maven
 - mvn surefire:test -Dtest=funcionales #Por medio de surefire, aseguramos que se pruebe el test de funcionales
 - mvn surefire:test -Dtest=MockitoTest
 - mvn surefire:test -Dtest=DBUnitTest
-
-
-
-
 
 - DfailIfNoTests=false #Util para continuar haciendo pruebas aunque no se encuentre un Test
 
