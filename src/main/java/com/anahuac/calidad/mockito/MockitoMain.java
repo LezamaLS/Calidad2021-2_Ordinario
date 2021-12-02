@@ -3,9 +3,9 @@
 
 //FakeOracleAlumno.java
 
-package com.anahuac.calidad.DoublesDAO;
+package com.anahuac.calidad.mockito;
 
-public class FakeOracleAlumnoDAO implements AlumnoDAO {
+public class MockitoMain implements AlumnoDAO {
 
 	@Override
 	public Boolean addAlumno(Alumno a) {

@@ -10,9 +10,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import com.anahuac.calidad.DoublesDAO.Alumno;
+import com.anahuac.calidad.mockito.Alumno;
 
-public class AlumnoDAOMySQL {
+public class DBUnit {
 
 	
 	//Conection 33060

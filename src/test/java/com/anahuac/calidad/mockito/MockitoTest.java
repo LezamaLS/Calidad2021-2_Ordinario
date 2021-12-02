@@ -3,7 +3,7 @@
 
 //TEST Doubles con Mockito
 
-package com.anahuac.calidad.DoublesDAO;
+package com.anahuac.calidad.mockito;
 
 import static org.junit.Assert.*;
 
@@ -17,6 +17,9 @@ import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
+import com.anahuac.calidad.mockito.Alumno;
+import com.anahuac.calidad.mockito.MockitoMain;
+
 import static org.mockito.Mockito.when;
 import static org.mockito.ArgumentMatchers.*;
 //Import hamcrest
@@ -24,9 +27,9 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
-public class FakeOracleAlumnoDAOTest {
+public class MockitoTest {
 	
-	private FakeOracleAlumnoDAO DAO;
+	private MockitoMain DAO;
 	// Initialize HashMap
 	public HashMap <String, Alumno> alumnos; 
 	// Create student
@@ -36,7 +39,7 @@ public class FakeOracleAlumnoDAOTest {
 
 	@Before
 	public void setUp() throws Exception {
-		DAO = Mockito.mock(FakeOracleAlumnoDAO.class);
+		DAO = Mockito.mock(MockitoMain.class);
 		alumnos = new HashMap <String, Alumno>();
 		// Declare the object with parameters
 		alumno1 = new Alumno("001","nombre", "CorreoActual@gmail.com", 20); 
