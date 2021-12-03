@@ -23,9 +23,9 @@ before_install:
   - sudo apt-get install -y libappindicator1 fonts-liberation #Dependencias para Chromium
   - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb #Descargamos Chrome
   - sudo dpkg -i google-chrome*.deb #Instalamos Chrome
-  //- wget https://chromedriver.storage.googleapis.com/2.38/chromedriver_linux64.zip #Descargamos ChromeDriver
-  //- unzip chromedriver_linux64.zip #Descomprimimos ChromeDriver
-  //- sudo cp chromedriver /usr/bin #Acomodamos ChromeDriver en el bin
+  - wget https://chromedriver.storage.googleapis.com/2.38/chromedriver_linux64.zip #Descargamos ChromeDriver
+  - unzip chromedriver_linux64.zip #Descomprimimos ChromeDriver
+  - sudo cp chromedriver /usr/bin #Acomodamos ChromeDriver en el bin
   - mysql -u root --password="" < SQLTest/dummy.sql #Proceso para MySQL, usando mi dummy script
 
 
@@ -36,7 +36,7 @@ script:
 - mvn surefire:test -Dtest=DBUnitTest
 - mvn surefire:test -Dtest=MockitoTest
 
-//- DfailIfNoTests=false #Util para continuar haciendo pruebas aunque no se encuentre un Test. No es necesario para el build final, pero cabe destacarlo.
+- DfailIfNoTests=false #Util para continuar haciendo pruebas aunque no se encuentre un Test. No es necesario para el build final, pero cabe destacarlo.
 
 
 notifications:
