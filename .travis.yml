@@ -28,6 +28,14 @@ before_install:
   - sudo cp chromedriver /usr/bin #Acomodamos ChromeDriver en el bin
   - mysql -u root --password="" < SQLTest/dummy.sql #Proceso para MySQL, usando mi dummy script
 
+script: 
+- mvn clean #Aseguramos que surefire pueda correr sin problemas
+- mvn test #Iniciamos proceso de pruebas de Maven
+- mvn surefire:test -Dtest=funcionales #Por medio de surefire, aseguramos que se pruebe el test de funcionales
+- mvn surefire:test -Dtest=DBUnitTest
+- mvn surefire:test -Dtest=MockitoTest
+
+- DfailIfNoTests=false #Util para continuar haciendo pruebas aunque no se encuentre un Test. No es necesario para el build final, pero cabe destacarlo.
 
 
 notifications:
