@@ -36,7 +36,7 @@ script:
 - mvn surefire:test -Dtest=DBUnitTest
 - mvn surefire:test -Dtest=MockitoTest
 
-- DfailIfNoTests=false #Util para continuar haciendo pruebas aunque no se encuentre un Test. No es necesario para el build final, pero cabe destacarlo.
+//- DfailIfNoTests=false #Util para continuar haciendo pruebas aunque no se encuentre un Test. No es necesario para el build final, pero cabe destacarlo.
 
 
 notifications:
