@@ -82,10 +82,8 @@ public class funcionales {
 		sleep(1.2);
 		String correct = driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[4]/div/p")).getText();
 
-		//assertEquals("Successfully added!", correct);
+		assertEquals("Successfully added!", correct);
 
- 		
-		assertEquals("Nice one", correct);
 		System.out.print(correct + "\nUsuario correctamente añadido.");
 	}
 	 
